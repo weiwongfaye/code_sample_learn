@@ -47,4 +47,4 @@ if __name__ == '__main__':
     paramSet.doFirstMP()
 
     print paramSet.ID_List
-
+    print "test done"
