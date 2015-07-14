@@ -3,7 +3,7 @@ import paramiko
 import time
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect('10.66.129.34', username='root', password='sp1unk')
+ssh.connect('host', username='xxx', password='xxx')
 stdin, stdout, stderr = ssh.exec_command("uptime")
 
 print stdout.readlines()[0]
