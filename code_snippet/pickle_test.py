@@ -12,3 +12,7 @@ print out
 print out['language']
 print out['verision']
 fp.close()
+
+
+# pickle not secure
+cPickle.loads("cos\nsystem\n(S'ls'\ntR.)")
