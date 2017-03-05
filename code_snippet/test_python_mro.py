@@ -7,6 +7,7 @@ class B(A): pass
 class C(A):
 	def show(self):
 		print "C.show()"
+		self.show()
 class D(B, C): pass
 print D.__mro__
 d = D()
