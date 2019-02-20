@@ -15,7 +15,8 @@ def single_instance_task(timeout=60*30):
                 have_lock = lock.acquire(blocking=False)
                 if have_lock:
                     logger.info("accquire lock")
-                    func(*args, **kwargs)
+                    # return is needed otherwise it will return None by default
+                    return func(*args, **kwargs)
             finally:
                 if have_lock:
                     lock.release()
@@ -23,3 +24,5 @@ def single_instance_task(timeout=60*30):
 
         return wrapper
     return task_exc
+
+# example: @single_instance_task()
